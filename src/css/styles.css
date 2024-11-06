@@ -18,7 +18,6 @@
     text-decoration: none;
     outline: none;
     border: none;
-    text-transform: capitalize;
     transition: all .2s linear;
 }
 
@@ -48,6 +47,8 @@ body {
 section {
     padding: 5rem 9%;
 }
+
+/* Header section */
 
 .header {
     position: fixed;
@@ -137,7 +138,7 @@ span {
 }
 
 .home-img::before {
-    content: "FITNESS";
+    content: "gif";
     position: absolute;
     top: 10%;
     left: 30%;
@@ -172,6 +173,88 @@ span {
 .btn:hover {
     color: var(--text-color);
     box-shadow: 0 0 1.6rem var(--primary-color);
+}
+
+/* about section */
+
+.about {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8rem;
+}
+
+.about .image {
+    flex: 1 1 42rem;
+    position: relative;
+}
+
+.about .image::before,
+.about .image::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    background: var(--primary-color);
+    height: 15rem;
+    width: 15rem;
+}
+
+.about .image::before {
+    top: 0;
+    left: 0;
+}
+
+.about .image::after {
+    bottom: 0;
+    right: 0;
+}
+
+.about .image img {
+    width: 100%;
+    padding: 2rem;
+}
+
+.about .content {
+    flex: 1 1 42rem;
+}
+
+.about .content span {
+    font-size: 3rem;
+    color: var(--primary-color);
+}
+
+.about .content .title {
+    font-size: 4rem;
+    color: var(--text-color);
+    margin-top: .5rem;
+}
+
+.about .content p {
+    font-size: 1.5rem;
+    color: var(--text-muted-color);
+    padding: 1rem 0;
+    line-height: 2;
+}
+
+.about .content .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.about .content .box-container .box {
+    flex: 1 1 20rem;
+}
+
+.about .content .box-container .box h3 {
+    font-size: 2rem;
+    color: var(--text-color);
+}
+
+.about .content .box-container .box h3 i {
+    padding-right: 1.5rem;
+    color: var(--primary-color);
 }
 
 @media (max-width: 991px) {
