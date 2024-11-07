@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap");
 
 :root {
-    --primary-color: rgb(5, 238, 21);
+    /*--primary-color: #7c3aed;*/
     /*--primary-color: rgb(240, 26, 36);*/
+    --primary-color: rgb(5, 238, 21);
     --secondary-color: #000;
     --text-color: #fff;
     --text-muted-color: #aaa;
@@ -193,6 +194,10 @@ span {
     box-shadow: 0 0 1.6rem var(--primary-color);
 }
 
+.btn i {
+    font-size: 2rem;
+}
+
 /* about section */
 
 .about {
@@ -274,6 +279,90 @@ span {
     padding-right: 1.5rem;
     color: var(--primary-color);
 }
+
+/* projects section */
+
+.heading {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.heading::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: .1rem;
+    width: 100%;
+    background: var(--text-muted-color);
+    z-index: -1;
+}
+.heading span {
+    font-size: 3rem;
+    color: var(--primary-color);
+    background: var(--secondary-color);
+    padding: .5rem 1.5rem;
+    border: 0.1rem solid var(--text-muted-color);
+    border-radius: .5rem;
+}
+
+.project .slide {
+    background: var(--background-color);
+    margin-bottom: 7rem;
+}
+
+.project .slide:hover .image img {
+    transform: scale(1.1);
+}
+
+.project .slide .image {
+    height: 25rem;
+    width: 100%;
+    overflow: hidden;
+}
+.project .slide .image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.project .slide .content {
+    padding: 2rem;
+}
+
+.project .slide .content .link {
+    padding-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.project .slide .content .link a {
+    color: var(--primary-color);
+}
+
+.project .slide .content .link a:hover {
+    color: var(--text-color);
+}
+
+.project .slide .content .link span {
+    color: var(--text-color);
+    padding: 0 1rem;
+}
+
+.project .slide .content h3 {
+    font-size: 2rem;
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+.project .slide .content p {
+    font-size: 1.5rem;
+    color: var(--text-muted-color);
+    line-height: 2;
+    padding: 1rem 0;
+}
+
 
 @media (max-width: 991px) {
     html {
