@@ -54,4 +54,38 @@ var swiper = new Swiper(".project-slider", {
     },
 });
 
+var swiper = new Swiper(".skill-slider", {
+    spaceBetween: 20,
+    grabCursor: true,
+    loop:true,
+    autoplay: {
+        delay: 7500,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    breakpoints:{
+        0:{
+            slidesPerView:1,
+        },
+        235:{
+            slidesPerView:2,
+        },
+        340:{
+            slidesPerView:3,
+        },
+        768:{
+            slidesPerView:4,
+        },
+        850:{
+            slidesPerView:5,
+        },
+        1130:{
+            slidesPerView:6,
+        },
+    },
+});
+
 

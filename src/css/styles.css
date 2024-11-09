@@ -363,6 +363,63 @@ span {
     padding: 1rem 0;
 }
 
+/* section skill */
+
+.skill .slide {
+    background: var(--background-color);
+    margin-bottom: 7rem;
+}
+
+.skill .slide:hover .icon i {
+    transform: scale(1.1);
+}
+
+.skill .slide .icon {
+    height: fit-content;
+    width: fit-content;
+    padding: 1.5rem;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    border-radius: 1rem;
+    transition: all 0.5s ease;
+}
+
+.skill .slide .icon i {
+    font-size: 18rem;
+    color: var(--primary-color);
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.skill .slide .icon span {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+@media (max-width: 1750px) {
+    .skill .slide .icon i {
+        font-size: 15rem;
+    }
+    .skill .slide .icon span {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 1350px) {
+    .skill .slide .icon i {
+        font-size: 12rem;
+    }
+    .skill .slide .icon span {
+        font-size: 1.5rem;
+    }
+}
 
 @media (max-width: 991px) {
     html {
@@ -376,6 +433,13 @@ span {
 
     section {
         padding: 3rem 2rem;
+    }
+
+    .skill .slide .icon i {
+        font-size: 12rem;
+    }
+    .skill .slide .icon span {
+        font-size: 1.5rem;
     }
 
 }
@@ -431,9 +495,20 @@ span {
         font-size: 3rem;
     }
 
-    .features .box-container .box.second {
-        flex-flow: column;
+    .skill .slide {
+        margin-bottom: 5rem;
     }
+
+    .skill .slide .icon i {
+        font-size: 10rem;
+    }
+    .skill .slide .icon span {
+        font-size: 1.2rem;
+    }
+
+    /*.features .box-container .box.second {*/
+    /*    flex-flow: column;*/
+    /*}*/
 }
 @media (max-width: 450px) {
     html {
