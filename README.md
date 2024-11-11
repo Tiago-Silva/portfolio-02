@@ -5,7 +5,8 @@
 Uma landing page online para minha apresentação e dos meus projetos.
 
 <h1 align="center">
-  <img src="./public/tela01.gif" width="auto"/>
+  <img src="./public/tela01.png" width="600"/>
+  <img src="./public/tela02.png" width="600"/>
 </h1>
 
 ## 💻 Requisitos
