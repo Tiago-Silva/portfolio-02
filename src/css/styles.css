@@ -398,6 +398,14 @@ span {
     object-fit: cover;
 }
 
+.skill .slide .icon svg {
+    font-size: 18rem;
+    color: var(--primary-color);
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
 .skill .slide .icon span {
     font-size: 2rem;
     font-weight: 800;
