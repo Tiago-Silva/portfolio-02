@@ -74,6 +74,10 @@ section {
     color: var(--primary-color);
 }
 
+.header .navbar .contact-menu {
+    display: none;
+}
+
 .header .navbar a {
     display: inline-block;
     padding: 1.5rem 2rem;
@@ -555,6 +559,10 @@ span {
 
     .top-btn {
         display: none;
+    }
+
+    .header .navbar .contact-menu {
+        display: inline-block;
     }
 
     .home-content h1, span {
