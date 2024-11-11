@@ -411,6 +411,76 @@ span {
     font-weight: 800;
 }
 
+/* footer */
+
+.footer .box-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.footer .box-container .box h3 {
+    font-size: 2.2rem;
+    color: var(--text-color);
+    padding: 1rem 1rem;
+}
+
+.footer .box-container .box .links {
+    font-size: 1.5rem;
+    display: block;
+    color: var(--text-muted-color);
+    padding: 1rem 3rem;
+}
+
+.footer .box-container .box .links:hover {
+    color: var(--primary-color);
+}
+
+.footer .box-container .box p {
+    font-size: 1.5rem;
+    color: var(--text-muted-color);
+    padding: 1rem 3rem;
+}
+
+.footer .box-container .box p i {
+    padding-right: .5rem;
+    color: var(--primary-color);
+}
+
+.footer .box-container .box .share {
+    padding: 1rem 3rem;
+}
+
+.footer .box-container .box .share a {
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    font-size: 1.7rem;
+    color: var(--text-color);
+    background: var(--background-color);
+    border-radius: 50%;
+    margin-right: .5rem;
+    text-align: center;
+}
+
+.footer .box-container .box .share a:hover {
+    background: var(--primary-color);
+}
+
+.footer .box-container .box form {
+    margin-left: 2rem;
+}
+
+.footer .box-container .box form .email {
+    margin-bottom: 1rem;
+    width: 100%;
+    background: var(--background-color);
+    padding: 1.2rem;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    text-transform: none;
+}
+
 @media (max-width: 1750px) {
     .skill .slide .icon i {
         font-size: 15rem;
@@ -514,9 +584,12 @@ span {
         font-size: 1.2rem;
     }
 
-    /*.features .box-container .box.second {*/
-    /*    flex-flow: column;*/
-    /*}*/
+    .footer .box-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        gap: 1.5rem;
+        margin: 0 15rem;
+    }
 }
 @media (max-width: 450px) {
     html {
