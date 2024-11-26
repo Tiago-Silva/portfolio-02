@@ -12,7 +12,7 @@ window.onscroll = () =>{
 
 const typed = new Typed('.multiple-text',  {
     strings: [
-        'Desenvolvimento em Java',
+        'API em Java',
         'Front-end com React',
         'Front-end com Next.js',
         'Aplicativos em React Native',
