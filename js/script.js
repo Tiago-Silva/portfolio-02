@@ -1,14 +1,31 @@
 let menu = document.querySelector('#menu-btn');
 let navbar = document.querySelector('.header .navbar');
 
-menu.onclick = () =>{
+// Toggle menu on button click (X button)
+menu.onclick = () => {
     menu.classList.toggle('fa-times');
     navbar.classList.toggle('active');
+    document.body.style.overflow = navbar.classList.contains('active') ? 'hidden' : 'auto';
 };
-window.onscroll = () =>{
-    menu.classList.remove('fa-times');
-    navbar.classList.remove('active');
-};
+
+
+// Close menu when clicking on a menu item
+document.querySelectorAll('.navbar a').forEach(link => {
+    link.onclick = () => {
+        menu.classList.remove('fa-times');
+        navbar.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    };
+});
+
+// Close menu when clicking on backdrop
+navbar.addEventListener('click', (e) => {
+    if (e.target === navbar) {
+        menu.classList.remove('fa-times');
+        navbar.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});
 
 const typed = new Typed('.multiple-text',  {
     strings: [
