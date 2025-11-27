@@ -4,6 +4,7 @@
     /*--primary-color: #7c3aed;*/
     /*--primary-color: rgb(240, 26, 36);*/
     --primary-color: rgb(5, 238, 21);
+    --primary-color-rgb: 5, 238, 21;
     --secondary-color: #000;
     --text-color: #fff;
     --text-muted-color: #aaa;
@@ -95,6 +96,13 @@ section {
     color: var(--text-color);
     cursor: pointer;
     display: none;
+    transition: all 0.3s ease;
+    z-index: 10001;
+}
+
+#menu-btn:hover {
+    color: var(--primary-color);
+    transform: scale(1.1);
 }
 
 .nav-btn {
@@ -529,32 +537,109 @@ span {
 @media (max-width: 768px) {
     #menu-btn {
         display: inline-block;
+        position: relative;
     }
 
     #menu-btn.fa-times {
         transform: rotate(180deg);
+        color: var(--primary-color);
     }
 
     .header {
         padding: 2rem;
     }
 
-    .header .navbar {
-        position: absolute;
-        top: 99%;
+    /* Backdrop overlay */
+    .header .navbar::before {
+        content: '';
+        position: fixed;
+        top: 0;
         left: 0;
-        right: 0;
-        background: var(--secondary-color);
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(5px);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease;
+        z-index: -1;
+    }
+
+    .header .navbar.active::before {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .header .navbar {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        max-width: 350px;
+        height: 100vh;
+        background: linear-gradient(135deg, var(--secondary-color) 0%, rgba(19, 28, 39, 0.98) 100%);
+        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
+        padding: 8rem 0 2rem 0;
+        overflow-y: auto;
+        transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        border-left: 2px solid var(--primary-color);
     }
 
     .header .navbar.active {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        right: 0;
     }
 
     .header .navbar a {
         display: block;
         font-size: 2rem;
+        margin: 1rem 2rem;
+        padding: 1.5rem 2rem;
+        border-radius: 1rem;
+        background: rgba(255, 255, 255, 0.02);
+        border: none;
+        transition: all 0.3s ease;
+        transform: translateX(100px);
+        opacity: 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Efeito de brilho sutil no fundo */
+    .header .navbar a::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        transition: left 0.5s ease;
+    }
+
+    .header .navbar a:hover::before {
+        left: 100%;
+    }
+
+    .header .navbar.active a {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    /* Staggered animation for menu items */
+    .header .navbar.active a:nth-child(1) { transition-delay: 0.1s; }
+    .header .navbar.active a:nth-child(2) { transition-delay: 0.2s; }
+    .header .navbar.active a:nth-child(3) { transition-delay: 0.3s; }
+    .header .navbar.active a:nth-child(4) { transition-delay: 0.4s; }
+    .header .navbar.active a:nth-child(5) { transition-delay: 0.5s; }
+
+    .header .navbar a:hover {
+        background: linear-gradient(135deg, rgba(var(--primary-color-rgb), 0.15), rgba(var(--primary-color-rgb), 0.05));
+        transform: translateX(10px) scale(1.02);
+        box-shadow:
+            0 5px 20px rgba(0, 0, 0, 0.4),
+            0 0 20px rgba(var(--primary-color-rgb), 0.3),
+            inset 0 0 20px rgba(var(--primary-color-rgb), 0.1);
+        color: var(--primary-color);
     }
 
     .top-btn {
@@ -563,6 +648,43 @@ span {
 
     .header .navbar .contact-menu {
         display: inline-block;
+        background: linear-gradient(135deg, var(--primary-color), #00d4ff);
+        color: var(--secondary-color);
+        font-weight: bold;
+        border: none;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Efeito de brilho animado no botão de contato */
+    .header .navbar .contact-menu::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        transform: rotate(45deg);
+        animation: shine 3s infinite;
+    }
+
+    @keyframes shine {
+        0%, 100% {
+            transform: translateX(-100%) translateY(-100%) rotate(45deg);
+        }
+        50% {
+            transform: translateX(100%) translateY(100%) rotate(45deg);
+        }
+    }
+
+    .header .navbar .contact-menu:hover {
+        transform: translateX(10px) scale(1.05);
+        box-shadow:
+            0 8px 25px rgba(var(--primary-color-rgb), 0.5),
+            0 0 30px rgba(0, 191, 255, 0.4),
+            inset 0 0 20px rgba(255, 255, 255, 0.2);
+        filter: brightness(1.1);
     }
 
     .home-content h3 {
