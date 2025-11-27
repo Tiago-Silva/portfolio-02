@@ -27,6 +27,34 @@ navbar.addEventListener('click', (e) => {
     }
 });
 
+// Scroll Spy - Highlight active menu item based on visible section
+let sections = document.querySelectorAll('section[id]');
+let navLinks = document.querySelectorAll('.navbar a');
+
+function scrollActive() {
+    let scrollY = window.pageYOffset;
+
+    sections.forEach(current => {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop - 100;
+        const sectionId = current.getAttribute('id');
+
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + sectionId) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    });
+}
+
+window.addEventListener('scroll', scrollActive);
+
+// Set initial active state on page load
+window.addEventListener('load', scrollActive);
+
 const typed = new Typed('.multiple-text',  {
     strings: [
         'API em Java',
@@ -104,5 +132,3 @@ var swiper = new Swiper(".skill-slider", {
         },
     },
 });
-
-
