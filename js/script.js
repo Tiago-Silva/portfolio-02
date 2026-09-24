@@ -1,134 +1,105 @@
-let menu = document.querySelector('#menu-btn');
-let navbar = document.querySelector('.header .navbar');
+/* ==========================================================================
+   TIAGO SILVA PORTFOLIO - JAVASCRIPT LOGIC
+   ========================================================================== */
 
-// Toggle menu on button click (X button)
-menu.onclick = () => {
-    menu.classList.toggle('fa-times');
-    navbar.classList.toggle('active');
-    document.body.style.overflow = navbar.classList.contains('active') ? 'hidden' : 'auto';
-};
+document.addEventListener('DOMContentLoaded', () => {
 
+    // 1. Mobile Menu Navigation Toggle
+    const menuBtn = document.querySelector('#menu-btn');
+    const navbar = document.querySelector('.navbar');
 
-// Close menu when clicking on a menu item
-document.querySelectorAll('.navbar a').forEach(link => {
-    link.onclick = () => {
-        menu.classList.remove('fa-times');
-        navbar.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    };
-});
+    if (menuBtn && navbar) {
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('fa-xmark');
+            navbar.classList.toggle('active');
+        });
 
-// Close menu when clicking on backdrop
-navbar.addEventListener('click', (e) => {
-    if (e.target === navbar) {
-        menu.classList.remove('fa-times');
-        navbar.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    }
-});
-
-// Scroll Spy - Highlight active menu item based on visible section
-let sections = document.querySelectorAll('section[id]');
-let navLinks = document.querySelectorAll('.navbar a');
-
-function scrollActive() {
-    let scrollY = window.pageYOffset;
-
-    sections.forEach(current => {
-        const sectionHeight = current.offsetHeight;
-        const sectionTop = current.offsetTop - 100;
-        const sectionId = current.getAttribute('id');
-
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + sectionId) {
-                    link.classList.add('active');
-                }
+        // Close menu on link click
+        document.querySelectorAll('.navbar a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuBtn.classList.remove('fa-xmark');
+                navbar.classList.remove('active');
             });
-        }
-    });
-}
+        });
+    }
 
-window.addEventListener('scroll', scrollActive);
+    // 2. Active Link Scroll Spy
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.navbar a');
 
-// Set initial active state on page load
-window.addEventListener('load', scrollActive);
+    function scrollSpy() {
+        const scrollY = window.scrollY;
 
-const typed = new Typed('.multiple-text',  {
-    strings: [
-        'API em Java',
-        'Front-end com React',
-        'Front-end com Next.js',
-        'Aplicativos em React Native',
-        'HTML e CSS Profissionais',
-        'JavaScript Dinâmico',
-        'Backend com Node.js',
-        'Interfaces com Design Responsivo',
-        'Clean Code',
-        'Clean Architecture',
-    ],
-    typeSpeed: 60,
-    backSpeed: 60,
-    backDelay: 1000,
-    loop: true,
-});
+        sections.forEach(current => {
+            const sectionHeight = current.offsetHeight;
+            const sectionTop = current.offsetTop - 120;
+            const sectionId = current.getAttribute('id');
 
-var swiper = new Swiper(".project-slider", {
-    spaceBetween: 20,
-    grabCursor: true,
-    loop:true,
-    autoplay: {
-        delay: 7500,
-        disableOnInteraction: false,
-    },
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    breakpoints:{
-        0:{
-            slidesPerView:1,
-        },
-        768:{
-            slidesPerView:2,
-        },
-        991:{
-            slidesPerView:3,
-        },
-    },
-});
+            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + sectionId) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }
 
-var swiper = new Swiper(".skill-slider", {
-    spaceBetween: 20,
-    grabCursor: true,
-    loop:true,
-    autoplay: {
-        delay: 7500,
-        disableOnInteraction: false,
-    },
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    breakpoints:{
-        0:{
-            slidesPerView:1,
-        },
-        235:{
-            slidesPerView:2,
-        },
-        340:{
-            slidesPerView:3,
-        },
-        768:{
-            slidesPerView:4,
-        },
-        850:{
-            slidesPerView:5,
-        },
-        1130:{
-            slidesPerView:6,
-        },
-    },
+    window.addEventListener('scroll', scrollSpy);
+    scrollSpy();
+
+    // 3. Typed.js Hero Subtitle Typing Animation
+    if (document.querySelector('.multiple-text')) {
+        new Typed('.multiple-text', {
+            strings: [
+                'Desenvolvedor Rust & Java',
+                'Especialista em Sistemas ERP',
+                'Engenheiro Full Stack & Mobile',
+                'Criador do RhemaBiblion',
+                'React • Next.js • Tauri',
+                'Arquitetura Limpa & Alta Performance'
+            ],
+            typeSpeed: 50,
+            backSpeed: 40,
+            backDelay: 1500,
+            loop: true
+        });
+    }
+
+    // 4. Project Category Filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    if (filterBtns.length > 0 && projectCards.length > 0) {
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active filter button
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    if (filterValue === 'all' || cardCategory === filterValue) {
+                        card.classList.remove('hide');
+                        card.style.animation = 'fadeIn 0.5s ease forwards';
+                    } else {
+                        card.classList.add('hide');
+                    }
+                });
+            });
+        });
+    }
+
+    // 5. AOS (Animate On Scroll) Initialization
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            offset: 80,
+            duration: 700,
+            once: true,
+            easing: 'ease-out-cubic'
+        });
+    }
 });
