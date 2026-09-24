@@ -515,7 +515,7 @@ section {
    ========================================================================== */
 .featured-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
 }
 
@@ -550,12 +550,14 @@ section {
     color: var(--accent-cyan);
 }
 .badge-live { color: var(--accent-emerald); }
+.badge-mobile { color: var(--accent-purple); }
 .badge-media { color: var(--accent-pink); }
 
 .featured-img {
     height: 200px;
     overflow: hidden;
     position: relative;
+    background: #0f172a;
 }
 .featured-img img {
     width: 100%;
@@ -565,6 +567,18 @@ section {
 }
 .featured-card:hover .featured-img img {
     transform: scale(1.08);
+}
+
+.mobile-preview-container {
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mobile-fit-img {
+    object-fit: contain !important;
+    object-position: center !important;
+    padding: 10px;
 }
 
 .media-cover {
@@ -713,8 +727,17 @@ section {
     flex-direction: column;
     transition: all 0.3s ease;
 }
+
+/* FIX: Ensure cards when shown are immediately visible regardless of AOS load delay */
+.project-card:not(.hide) {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+}
+
 .project-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-6px) !important;
     border-color: var(--border-glow);
     background: var(--bg-card-hover);
 }
@@ -723,12 +746,16 @@ section {
     height: 180px;
     position: relative;
     overflow: hidden;
+    background: #0f172a;
 }
 .project-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
+}
+.mobile-card-img {
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
 }
 .project-card:hover .project-img img {
     transform: scale(1.06);
@@ -826,7 +853,18 @@ section {
 
 /* Hide filtered items */
 .project-card.hide {
-    display: none;
+    display: none !important;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* ==========================================================================
@@ -1050,7 +1088,7 @@ section {
    RESPONSIVE MEDIA QUERIES
    ========================================================================== */
 @media (max-width: 1200px) {
-    .featured-grid { grid-template-columns: 1fr; }
+    .featured-grid { grid-template-columns: 1fr 1fr; }
     .contact-container { grid-template-columns: repeat(2, 1fr); }
 }
 
@@ -1064,6 +1102,7 @@ section {
     .home-img { margin-top: 4rem; }
 
     .about-container { grid-template-columns: 1fr; }
+    .featured-grid { grid-template-columns: 1fr; }
     .skills-wrapper { grid-template-columns: 1fr; }
     .footer-container { grid-template-columns: 1fr; gap: 3rem; }
 }
