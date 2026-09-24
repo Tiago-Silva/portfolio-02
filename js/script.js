@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 'Desenvolvedor Rust & Java',
                 'Especialista em Sistemas ERP',
                 'Engenheiro Full Stack & Mobile',
-                'Criador do RhemaBiblion',
+                'Criador do RhemaBiblion (Desktop & Mobile)',
                 'React • Next.js • Tauri',
                 'Arquitetura Limpa & Alta Performance'
             ],
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 4. Project Category Filter
+    // 4. Project Category Filter (FIX: Guarantees visibility even if images are loading)
     const filterBtns = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
 
@@ -84,22 +84,42 @@ document.addEventListener('DOMContentLoaded', () => {
                     const cardCategory = card.getAttribute('data-category');
                     if (filterValue === 'all' || cardCategory === filterValue) {
                         card.classList.remove('hide');
-                        card.style.animation = 'fadeIn 0.5s ease forwards';
+                        card.classList.add('aos-animate');
+                        card.style.opacity = '1';
+                        card.style.transform = 'none';
+                        card.style.visibility = 'visible';
+                        card.style.animation = 'fadeIn 0.3s ease forwards';
                     } else {
                         card.classList.add('hide');
                     }
                 });
+
+                // Refresh AOS positions
+                if (typeof AOS !== 'undefined') {
+                    AOS.refresh();
+                }
             });
         });
     }
 
     // 5. AOS (Animate On Scroll) Initialization
-    if (typeof AOS !== 'undefined') {
-        AOS.init({
-            offset: 80,
-            duration: 700,
-            once: true,
-            easing: 'ease-out-cubic'
-        });
+    function initAOS() {
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                offset: 60,
+                duration: 600,
+                once: true,
+                easing: 'ease-out-cubic'
+            });
+        }
     }
+
+    initAOS();
+
+    // Re-refresh AOS after window fully loads images to ensure position calculation accuracy
+    window.addEventListener('load', () => {
+        if (typeof AOS !== 'undefined') {
+            AOS.refresh();
+        }
+    });
 });
