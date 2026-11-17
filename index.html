@@ -3,8 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#070a12">
     <title>Tiago Silva | Engenheiro de Software & Desenvolvedor Full Stack</title>
     
+    <script>
+        (function () {
+            try {
+                var savedTheme = localStorage.getItem('portfolio-theme') || 'default';
+                document.documentElement.setAttribute('data-theme', savedTheme);
+            } catch (e) {
+                document.documentElement.setAttribute('data-theme', 'default');
+            }
+        })();
+    </script>
+
     <link rel="icon" href="./public/my-icon.ico" type="image/x-icon" />
     
     <!-- Google Fonts -->
@@ -20,6 +32,7 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/themes.css"/>
 </head>
 <body>
 
@@ -41,6 +54,18 @@
         </nav>
 
         <div class="header-actions">
+            <button
+                type="button"
+                id="theme-trigger-btn"
+                class="theme-trigger-btn"
+                aria-label="Trocar tema (Ctrl+K)"
+                aria-expanded="false"
+                aria-controls="theme-palette-backdrop"
+            >
+                <i class="fa-solid fa-palette"></i>
+                <span class="theme-trigger-label">Tiago Dark</span>
+                <kbd class="theme-trigger-kbd">Ctrl+K</kbd>
+            </button>
             <a href="#contact" class="nav-btn"><i class="fa-solid fa-paper-plane"></i> Fale Comigo</a>
         </div>
     </header>
@@ -796,9 +821,37 @@
         </div>
     </footer>
 
+    <!-- Theme Command Palette (VS Code / Omarchy Style) -->
+    <div id="theme-palette-backdrop" class="theme-palette-backdrop" aria-hidden="true">
+        <div class="theme-palette" role="dialog" aria-modal="true" aria-label="Seletor de Temas">
+            <div class="theme-palette-header">
+                <i class="fa-solid fa-palette"></i>
+                <input
+                    type="text"
+                    id="theme-palette-input"
+                    class="theme-palette-input"
+                    placeholder="Selecionar tema... (ex: Tokyo Night, Gruvbox, Nord)"
+                    autocomplete="off"
+                    spellcheck="false"
+                />
+                <button type="button" id="theme-palette-close" class="theme-palette-close" aria-label="Fechar">ESC</button>
+            </div>
+            <ul id="theme-palette-list" class="theme-palette-list" role="listbox"></ul>
+            <div class="theme-palette-footer">
+                <div class="theme-palette-hints">
+                    <span><kbd>↑</kbd> <kbd>↓</kbd> pré-visualizar</span>
+                    <span><kbd>Enter</kbd> aplicar</span>
+                    <span><kbd>Esc</kbd> cancelar</span>
+                </div>
+                <span>Omarchy • VS Code</span>
+            </div>
+        </div>
+    </div>
+
     <!-- JS Scripts -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="js/themes.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
