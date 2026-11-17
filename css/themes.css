@@ -1,0 +1,312 @@
+/* ==========================================================================
+   OMARCHY / VS CODE INSPIRED THEMES
+   Default theme lives in :root inside style.css.
+   ========================================================================== */
+
+/* 1. Tokyo Night (Omarchy Default) */
+[data-theme="tokyo-night"] {
+    --bg-dark: #1a1b26;
+    --bg-surface: #24283b;
+    --bg-header: rgba(26, 27, 38, 0.85);
+    --bg-footer: rgba(22, 22, 30, 0.95);
+    --bg-surface-alpha: rgba(36, 40, 59, 0.88);
+    --bg-overlay: rgba(26, 27, 38, 0.78);
+    --bg-mobile-nav: rgba(26, 27, 38, 0.98);
+    --bg-card: rgba(36, 40, 59, 0.75);
+    --bg-card-hover: rgba(47, 51, 77, 0.88);
+
+    --accent-cyan: #7aa2f7;
+    --accent-blue: #7dcfff;
+    --accent-purple: #bb9af7;
+    --accent-emerald: #9ece6a;
+    --accent-pink: #f7768e;
+
+    --gradient-primary: linear-gradient(135deg, #7aa2f7 0%, #7dcfff 50%, #bb9af7 100%);
+    --gradient-glow: linear-gradient(135deg, rgba(122, 162, 247, 0.2), rgba(187, 154, 247, 0.2));
+    --bg-glow-1: rgba(122, 162, 247, 0.09);
+    --bg-glow-2: rgba(187, 154, 247, 0.09);
+    --accent-soft: rgba(122, 162, 247, 0.12);
+    --mobile-preview-bg: linear-gradient(135deg, #1a1b26 0%, #24283b 100%);
+
+    --text-main: #c0caf5;
+    --text-secondary: #a9b1d6;
+    --text-muted: #787c99;
+    --text-dark: #1a1b26;
+    --btn-primary-text: #15161e;
+
+    --surface-subtle: rgba(192, 202, 245, 0.05);
+    --surface-subtle-hover: rgba(192, 202, 245, 0.11);
+    --border-glass: rgba(192, 202, 245, 0.1);
+    --border-glass-hover: rgba(192, 202, 245, 0.22);
+    --border-glow: rgba(122, 162, 247, 0.4);
+    --scrollbar-thumb: #3b4261;
+
+    --shadow-main: 0 10px 30px -10px rgba(0, 0, 0, 0.55);
+    --shadow-glow: 0 0 25px rgba(122, 162, 247, 0.28);
+    --shadow-accent: 0 4px 15px rgba(122, 162, 247, 0.3);
+    --shadow-accent-hover: 0 8px 25px rgba(122, 162, 247, 0.48);
+}
+
+/* 2. Catppuccin Mocha */
+[data-theme="catppuccin-mocha"] {
+    --bg-dark: #1e1e2e;
+    --bg-surface: #313244;
+    --bg-header: rgba(30, 30, 46, 0.85);
+    --bg-footer: rgba(24, 24, 37, 0.95);
+    --bg-surface-alpha: rgba(49, 50, 68, 0.88);
+    --bg-overlay: rgba(30, 30, 46, 0.78);
+    --bg-mobile-nav: rgba(24, 24, 37, 0.98);
+    --bg-card: rgba(49, 50, 68, 0.72);
+    --bg-card-hover: rgba(69, 71, 90, 0.85);
+
+    --accent-cyan: #cba6f7;
+    --accent-blue: #89b4fa;
+    --accent-purple: #f5c2e7;
+    --accent-emerald: #a6e3a1;
+    --accent-pink: #f38ba8;
+
+    --gradient-primary: linear-gradient(135deg, #cba6f7 0%, #89b4fa 50%, #94e2d5 100%);
+    --gradient-glow: linear-gradient(135deg, rgba(203, 166, 247, 0.2), rgba(137, 180, 250, 0.2));
+    --bg-glow-1: rgba(203, 166, 247, 0.08);
+    --bg-glow-2: rgba(137, 180, 250, 0.08);
+    --accent-soft: rgba(203, 166, 247, 0.12);
+    --mobile-preview-bg: linear-gradient(135deg, #1e1e2e 0%, #313244 100%);
+
+    --text-main: #cdd6f4;
+    --text-secondary: #bac2de;
+    --text-muted: #a6adc8;
+    --text-dark: #11111b;
+    --btn-primary-text: #11111b;
+
+    --surface-subtle: rgba(205, 214, 244, 0.05);
+    --surface-subtle-hover: rgba(205, 214, 244, 0.11);
+    --border-glass: rgba(205, 214, 244, 0.1);
+    --border-glass-hover: rgba(205, 214, 244, 0.22);
+    --border-glow: rgba(203, 166, 247, 0.4);
+    --scrollbar-thumb: #45475a;
+
+    --shadow-main: 0 10px 30px -10px rgba(17, 17, 27, 0.6);
+    --shadow-glow: 0 0 25px rgba(203, 166, 247, 0.28);
+    --shadow-accent: 0 4px 15px rgba(203, 166, 247, 0.3);
+    --shadow-accent-hover: 0 8px 25px rgba(203, 166, 247, 0.48);
+}
+
+/* 3. Gruvbox Dark */
+[data-theme="gruvbox"] {
+    --bg-dark: #1d2021;
+    --bg-surface: #282828;
+    --bg-header: rgba(29, 32, 33, 0.88);
+    --bg-footer: rgba(29, 32, 33, 0.96);
+    --bg-surface-alpha: rgba(40, 40, 40, 0.9);
+    --bg-overlay: rgba(29, 32, 33, 0.8);
+    --bg-mobile-nav: rgba(40, 40, 40, 0.98);
+    --bg-card: rgba(40, 40, 40, 0.82);
+    --bg-card-hover: rgba(60, 56, 54, 0.9);
+
+    --accent-cyan: #fe8019;
+    --accent-blue: #fabd2f;
+    --accent-purple: #d3869b;
+    --accent-emerald: #b8bb26;
+    --accent-pink: #fb4934;
+
+    --gradient-primary: linear-gradient(135deg, #fe8019 0%, #fabd2f 55%, #b8bb26 100%);
+    --gradient-glow: linear-gradient(135deg, rgba(254, 128, 25, 0.2), rgba(250, 189, 47, 0.2));
+    --bg-glow-1: rgba(254, 128, 25, 0.08);
+    --bg-glow-2: rgba(250, 189, 47, 0.06);
+    --accent-soft: rgba(254, 128, 25, 0.12);
+    --mobile-preview-bg: linear-gradient(135deg, #1d2021 0%, #3c3836 100%);
+
+    --text-main: #ebdbb2;
+    --text-secondary: #d5c4a1;
+    --text-muted: #a89984;
+    --text-dark: #1d2021;
+    --btn-primary-text: #1d2021;
+
+    --surface-subtle: rgba(235, 219, 178, 0.05);
+    --surface-subtle-hover: rgba(235, 219, 178, 0.11);
+    --border-glass: rgba(235, 219, 178, 0.1);
+    --border-glass-hover: rgba(235, 219, 178, 0.22);
+    --border-glow: rgba(254, 128, 25, 0.42);
+    --scrollbar-thumb: #504945;
+
+    --shadow-main: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+    --shadow-glow: 0 0 25px rgba(254, 128, 25, 0.25);
+    --shadow-accent: 0 4px 15px rgba(254, 128, 25, 0.3);
+    --shadow-accent-hover: 0 8px 25px rgba(254, 128, 25, 0.45);
+}
+
+/* 4. Nord */
+[data-theme="nord"] {
+    --bg-dark: #242933;
+    --bg-surface: #2e3440;
+    --bg-header: rgba(36, 41, 51, 0.88);
+    --bg-footer: rgba(36, 41, 51, 0.96);
+    --bg-surface-alpha: rgba(46, 52, 64, 0.9);
+    --bg-overlay: rgba(36, 41, 51, 0.78);
+    --bg-mobile-nav: rgba(46, 52, 64, 0.98);
+    --bg-card: rgba(59, 66, 82, 0.65);
+    --bg-card-hover: rgba(67, 76, 94, 0.85);
+
+    --accent-cyan: #88c0d0;
+    --accent-blue: #81a1c1;
+    --accent-purple: #b48ead;
+    --accent-emerald: #a3be8c;
+    --accent-pink: #bf616a;
+
+    --gradient-primary: linear-gradient(135deg, #88c0d0 0%, #81a1c1 50%, #5e81ac 100%);
+    --gradient-glow: linear-gradient(135deg, rgba(136, 192, 208, 0.2), rgba(129, 161, 193, 0.2));
+    --bg-glow-1: rgba(136, 192, 208, 0.08);
+    --bg-glow-2: rgba(129, 161, 193, 0.08);
+    --accent-soft: rgba(136, 192, 208, 0.12);
+    --mobile-preview-bg: linear-gradient(135deg, #2e3440 0%, #3b4252 100%);
+
+    --text-main: #eceff4;
+    --text-secondary: #e5e9f0;
+    --text-muted: #9aa5b8;
+    --text-dark: #2e3440;
+    --btn-primary-text: #242933;
+
+    --surface-subtle: rgba(236, 239, 244, 0.06);
+    --surface-subtle-hover: rgba(236, 239, 244, 0.12);
+    --border-glass: rgba(236, 239, 244, 0.1);
+    --border-glass-hover: rgba(236, 239, 244, 0.22);
+    --border-glow: rgba(136, 192, 208, 0.4);
+    --scrollbar-thumb: #4c566a;
+
+    --shadow-main: 0 10px 30px -10px rgba(0, 0, 0, 0.45);
+    --shadow-glow: 0 0 25px rgba(136, 192, 208, 0.25);
+    --shadow-accent: 0 4px 15px rgba(136, 192, 208, 0.28);
+    --shadow-accent-hover: 0 8px 25px rgba(136, 192, 208, 0.45);
+}
+
+/* 5. Rosé Pine */
+[data-theme="rose-pine"] {
+    --bg-dark: #191724;
+    --bg-surface: #1f1d2e;
+    --bg-header: rgba(25, 23, 36, 0.86);
+    --bg-footer: rgba(25, 23, 36, 0.96);
+    --bg-surface-alpha: rgba(31, 29, 46, 0.9);
+    --bg-overlay: rgba(25, 23, 36, 0.78);
+    --bg-mobile-nav: rgba(31, 29, 46, 0.98);
+    --bg-card: rgba(38, 35, 58, 0.72);
+    --bg-card-hover: rgba(49, 46, 74, 0.88);
+
+    --accent-cyan: #ebbcba;
+    --accent-blue: #9ccfd8;
+    --accent-purple: #c4a7e7;
+    --accent-emerald: #31748f;
+    --accent-pink: #eb6f92;
+
+    --gradient-primary: linear-gradient(135deg, #ebbcba 0%, #c4a7e7 50%, #9ccfd8 100%);
+    --gradient-glow: linear-gradient(135deg, rgba(235, 188, 186, 0.2), rgba(196, 167, 231, 0.2));
+    --bg-glow-1: rgba(235, 188, 186, 0.08);
+    --bg-glow-2: rgba(196, 167, 231, 0.08);
+    --accent-soft: rgba(235, 188, 186, 0.12);
+    --mobile-preview-bg: linear-gradient(135deg, #191724 0%, #26233a 100%);
+
+    --text-main: #e0def4;
+    --text-secondary: #c8c4e4;
+    --text-muted: #908caa;
+    --text-dark: #191724;
+    --btn-primary-text: #191724;
+
+    --surface-subtle: rgba(224, 222, 244, 0.05);
+    --surface-subtle-hover: rgba(224, 222, 244, 0.11);
+    --border-glass: rgba(224, 222, 244, 0.1);
+    --border-glass-hover: rgba(224, 222, 244, 0.22);
+    --border-glow: rgba(235, 188, 186, 0.4);
+    --scrollbar-thumb: #403d52;
+
+    --shadow-main: 0 10px 30px -10px rgba(0, 0, 0, 0.55);
+    --shadow-glow: 0 0 25px rgba(235, 188, 186, 0.24);
+    --shadow-accent: 0 4px 15px rgba(196, 167, 231, 0.28);
+    --shadow-accent-hover: 0 8px 25px rgba(196, 167, 231, 0.45);
+}
+
+/* 6. Kanagawa */
+[data-theme="kanagawa"] {
+    --bg-dark: #16161d;
+    --bg-surface: #1f1f28;
+    --bg-header: rgba(22, 22, 29, 0.88);
+    --bg-footer: rgba(22, 22, 29, 0.96);
+    --bg-surface-alpha: rgba(31, 31, 40, 0.9);
+    --bg-overlay: rgba(22, 22, 29, 0.8);
+    --bg-mobile-nav: rgba(31, 31, 40, 0.98);
+    --bg-card: rgba(31, 31, 40, 0.82);
+    --bg-card-hover: rgba(42, 42, 55, 0.92);
+
+    --accent-cyan: #7e9cd8;
+    --accent-blue: #7fb4ca;
+    --accent-purple: #957fb8;
+    --accent-emerald: #76946a;
+    --accent-pink: #d27e99;
+
+    --gradient-primary: linear-gradient(135deg, #7e9cd8 0%, #7fb4ca 50%, #957fb8 100%);
+    --gradient-glow: linear-gradient(135deg, rgba(126, 156, 216, 0.2), rgba(149, 127, 184, 0.2));
+    --bg-glow-1: rgba(126, 156, 216, 0.08);
+    --bg-glow-2: rgba(149, 127, 184, 0.08);
+    --accent-soft: rgba(126, 156, 216, 0.12);
+    --mobile-preview-bg: linear-gradient(135deg, #16161d 0%, #2a2a37 100%);
+
+    --text-main: #dcd7ba;
+    --text-secondary: #c8c093;
+    --text-muted: #727169;
+    --text-dark: #16161d;
+    --btn-primary-text: #16161d;
+
+    --surface-subtle: rgba(220, 215, 186, 0.05);
+    --surface-subtle-hover: rgba(220, 215, 186, 0.11);
+    --border-glass: rgba(220, 215, 186, 0.1);
+    --border-glass-hover: rgba(220, 215, 186, 0.22);
+    --border-glow: rgba(126, 156, 216, 0.4);
+    --scrollbar-thumb: #363646;
+
+    --shadow-main: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+    --shadow-glow: 0 0 25px rgba(126, 156, 216, 0.25);
+    --shadow-accent: 0 4px 15px rgba(126, 156, 216, 0.28);
+    --shadow-accent-hover: 0 8px 25px rgba(126, 156, 216, 0.45);
+}
+
+/* 7. Catppuccin Latte (Light) */
+[data-theme="catppuccin-latte"] {
+    --bg-dark: #eff1f5;
+    --bg-surface: #e6e9ef;
+    --bg-header: rgba(239, 241, 245, 0.88);
+    --bg-footer: rgba(230, 233, 239, 0.96);
+    --bg-surface-alpha: rgba(255, 255, 255, 0.9);
+    --bg-overlay: rgba(239, 241, 245, 0.82);
+    --bg-mobile-nav: rgba(239, 241, 245, 0.98);
+    --bg-card: rgba(255, 255, 255, 0.78);
+    --bg-card-hover: rgba(255, 255, 255, 0.95);
+
+    --accent-cyan: #1e66f5;
+    --accent-blue: #04a5e5;
+    --accent-purple: #8839ef;
+    --accent-emerald: #40a02b;
+    --accent-pink: #ea76cb;
+
+    --gradient-primary: linear-gradient(135deg, #1e66f5 0%, #04a5e5 50%, #8839ef 100%);
+    --gradient-glow: linear-gradient(135deg, rgba(30, 102, 245, 0.12), rgba(136, 57, 239, 0.12));
+    --bg-glow-1: rgba(30, 102, 245, 0.07);
+    --bg-glow-2: rgba(136, 57, 239, 0.07);
+    --accent-soft: rgba(30, 102, 245, 0.1);
+    --mobile-preview-bg: linear-gradient(135deg, #e6e9ef 0%, #ccd0da 100%);
+
+    --text-main: #4c4f69;
+    --text-secondary: #5c5f77;
+    --text-muted: #6c6f85;
+    --text-dark: #eff1f5;
+    --btn-primary-text: #ffffff;
+
+    --surface-subtle: rgba(76, 79, 105, 0.06);
+    --surface-subtle-hover: rgba(76, 79, 105, 0.12);
+    --border-glass: rgba(76, 79, 105, 0.14);
+    --border-glass-hover: rgba(76, 79, 105, 0.28);
+    --border-glow: rgba(30, 102, 245, 0.4);
+    --scrollbar-thumb: #bcc0cc;
+
+    --shadow-main: 0 10px 30px -10px rgba(76, 79, 105, 0.18);
+    --shadow-glow: 0 0 25px rgba(30, 102, 245, 0.18);
+    --shadow-accent: 0 4px 15px rgba(30, 102, 245, 0.25);
+    --shadow-accent-hover: 0 8px 25px rgba(30, 102, 245, 0.38);
+}
